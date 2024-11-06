@@ -125,6 +125,16 @@ body {
     background-size: cover; /* Обеспечить полное покрытие кружка изображением */
     background-position: center;
 }
+.grid-item.uh::before {
+    background-image: url('images/uhi.jpg'); /* Укажите путь к вашему изображению */
+    background-size: cover; /* Обеспечить полное покрытие кружка изображением */
+    background-position: center;
+}
+.grid-item.ah::before {
+    background-image: url('images/якласс.jpg'); /* Укажите путь к вашему изображению */
+    background-size: cover; /* Обеспечить полное покрытие кружка изображением */
+    background-position: center;
+}
 
 /* Soft rounded elements with shadow details for a modern look */
 .grid-item:after {
