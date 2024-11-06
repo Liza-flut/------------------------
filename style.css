@@ -120,6 +120,11 @@ body {
     background-size: cover; /* Обеспечить полное покрытие кружка изображением */
     background-position: center; /* Центрировать изображение внутри кружка */
 }
+.grid-item.unic-res::before {
+    background-image: url('images/step.jpg'); /* Укажите путь к вашему изображению */
+    background-size: cover; /* Обеспечить полное покрытие кружка изображением */
+    background-position: center;
+}
 
 /* Soft rounded elements with shadow details for a modern look */
 .grid-item:after {
