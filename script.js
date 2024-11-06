@@ -19,33 +19,32 @@ function filterResources() {
 // Добавляем обработчик события для поисковой строки
 searchBar.addEventListener('input', filterResources);
 
-// Функция для перехода на страницу деталей ресурса
+// Функция для перехода на страницу с уникальным названием для каждого ресурса
 function openResource(resourceId) {
-    // Переход на страницу деталей ресурса с ID ресурса в качестве URL-параметра
-    window.location.href = `resource.html?id=${resourceId}`;
+    // Переход на страницу с уникальным названием для каждого ресурса
+    window.location.href = `resource-${resourceId}.html`;
 }
 
 // Отображение конкретных деталей ресурса на странице ресурсов
-if (window.location.pathname.includes('resource.html')) {
-    const urlParams = new URLSearchParams(window.location.search);
-    const resourceId = urlParams.get('id');
-    
+if (window.location.pathname.includes('resource-1.html')) {
     const resourceTitle = document.getElementById('resource-title');
     const resourceDescription = document.getElementById('resource-description');
-    
-    // Пример данных для каждого ресурса
-    if (resourceId === 'resource1') {
-        resourceTitle.textContent = 'Ресурс 1';
-        resourceDescription.textContent = 'Здесь приведено подробное руководство о том, как использовать Ресурс 1. Это может включать шаги, изображения и советы для учителей.';
-    } else if (resourceId === 'resource2') {
-        resourceTitle.textContent = 'Ресурс 2';
-        resourceDescription.textContent = 'Подробные инструкции о том, как использовать Ресурс 2, а также лучшие практики и примеры изображений.';
-    } else if (resourceId === 'resource3') {
-        resourceTitle.textContent = 'Ресурс 3';
-        resourceDescription.textContent = 'Описание Ресурса 3 с информацией о его использовании и преимуществах.';
-    } else if (resourceId === 'resource4') {
-        resourceTitle.textContent = 'Ресурс 4';
-        resourceDescription.textContent = 'Здесь объясняется, как эффективно использовать Ресурс 4 в классе.';
-    }
-    // Дополнительные ресурсы могут быть добавлены аналогично
+    resourceTitle.textContent = 'Ресурс 1';
+    resourceDescription.textContent = 'Здесь приведено подробное руководство о том, как использовать Ресурс 1. Это может включать шаги, изображения и советы для учителей.';
+} else if (window.location.pathname.includes('resource-2.html')) {
+    const resourceTitle = document.getElementById('resource-title');
+    const resourceDescription = document.getElementById('resource-description');
+    resourceTitle.textContent = 'Ресурс 2';
+    resourceDescription.textContent = 'Подробные инструкции о том, как использовать Ресурс 2, а также лучшие практики и примеры изображений.';
+} else if (window.location.pathname.includes('resource-3.html')) {
+    const resourceTitle = document.getElementById('resource-title');
+    const resourceDescription = document.getElementById('resource-description');
+    resourceTitle.textContent = 'Ресурс 3';
+    resourceDescription.textContent = 'Описание Ресурса 3 с информацией о его использовании и преимуществах.';
+} else if (window.location.pathname.includes('resource-4.html')) {
+    const resourceTitle = document.getElementById('resource-title');
+    const resourceDescription = document.getElementById('resource-description');
+    resourceTitle.textContent = 'Ресурс 4';
+    resourceDescription.textContent = 'Здесь объясняется, как эффективно использовать Ресурс 4 в классе.';
 }
+// Дополнительные ресурсы могут быть добавлены аналогично
