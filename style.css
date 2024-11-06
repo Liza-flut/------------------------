@@ -1,0 +1,136 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #33475b;
+    background-color: #eaf3f9; /* Светлый фон */
+    overflow: auto; /* Предотвращает прокрутку */
+}
+
+/* Decorative Background Elements */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/12.jpg'); /* Замените URL на путь к локальному изображению */
+    background-size: cover; /* Обеспечить полное покрытие */
+    background-repeat: no-repeat; /* Не повторять изображение */
+    background-attachment: fixed; /* Зафиксировать фон при прокрутке */
+    opacity: 0.5; /* Полупрозрачный фон для глубины */
+    z-index: -1; /* Убедитесь, что фон позади всех элементов */
+}
+
+/* Header with Search Bar */
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.trademark-container {
+    display: flex;
+    align-items: center; /* Выравнивание по вертикали */
+    margin-right: 20px;
+}
+
+.trademark {
+    width: 100px; /* Увеличенный размер торгового знака */
+    height: auto;
+    margin-right: 0px; /* Отступ справа от значка */
+}
+
+.website-name {
+    font-size: 24px; /* Увеличенный размер шрифта для названия сайта */
+    color: #33475b;
+    font-weight: bold;
+}
+
+.search-bar {
+    width: 60%;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 20px;
+    border: 2px solid #b2c2d6;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный фон для поисковой строки */
+}
+
+/* Grid Container */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Увеличьте размер контейнеров */
+    gap: 20px; /* Отступы между элементами */
+    width: 80%;
+    max-width: 1200px; /* Максимальная ширина контейнера */
+    margin: 20px auto; /* Центрируем контейнер по горизонтали */
+}
+
+/* Individual Grid Item */
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    width: 300px; /* Установлено фиксированное значение ширины */
+    height: 100px; /* Увеличена высота для большей области текста */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s; /* Добавлено для плавного изменения фона */
+    display: flex;
+    align-items: flex-start; /* Центрирование по вертикали с верхней части */
+    justify-content: center; /* Центрирование по горизонтали */
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    text-align: center;
+    position: relative; /* Позволяет использовать позиционирование для псевдоэлементов */
+    padding-top: 40px; /* Отступ сверху, чтобы текст не перекрывал кружок */
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.5); /* Измените значение для настройки прозрачности */
+}
+
+.grid-item::before {
+    content: "";
+    position: absolute;
+    top: 5px; /* Уменьшите значение для поднятия кружка выше */
+    left: 5px; /* Уменьшите значение для сдвига кружка влево */
+    width: 40px; /* Увеличьте ширину кружка */
+    height: 40px; /* Увеличьте высоту кружка */
+    background-color: #b2c2d6; /* Цвет фона по умолчанию */
+    border-radius: 50%; /* Округлая форма */
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Уникальное изображение для конкретного ресурса */
+.grid-item.unique-resource::before {
+    background-image: url('images/fox.jpg'); /* Укажите путь к вашему изображению */
+    background-size: cover; /* Обеспечить полное покрытие кружка изображением */
+    background-position: center; /* Центрировать изображение внутри кружка */
+}
+
+/* Soft rounded elements with shadow details for a modern look */
+.grid-item:after {
+    content: '';
+    display: block;
+    background: linear-gradient(135deg, rgba(137, 194, 217, 0.7), rgba(29, 78, 137, 0.7));
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    bottom: -15px;
+    right: -15px;
+    border-radius: 50%;
+    z-index: -1;
+}
